@@ -1,4 +1,6 @@
 const express = require("express");
+import cors from "cors";
+import { corsOptions } from "./config/cors";
 const dotenv = require("dotenv");
 dotenv.config();
 const morgan = require("morgan");
@@ -7,6 +9,9 @@ const connectDB = require("./config/db");
 connectDB();
 
 const app = express();
+
+//handling cors
+app.use(cors(corsOptions));
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
