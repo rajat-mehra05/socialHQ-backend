@@ -1,4 +1,6 @@
 const express = require("express");
+import cors from "cors";
+import { corsOptions } from "./config/cors";
 const dotenv = require("dotenv");
 dotenv.config();
 const morgan = require("morgan");
@@ -17,6 +19,9 @@ app.use(express.json());
 //models
 require("./models/userModel");
 require("./models/postModel");
+
+//handling cors
+app.use(cors(corsOptions));
 
 //registering routes
 app.use(require("./routes/authRoutes"));
