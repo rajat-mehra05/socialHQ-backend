@@ -12,9 +12,11 @@ OPTIONS request.
  * 
  * The `exposedHeaders` property is an array of headers
  */
-export const corsOptions = {
+const corsOptions = {
   origin: ["http://localhost:3000", "https://social-hq.vercel.app/", "https://socialhq-api.up.railway.app/"],
   optionsSuccessStatus: 200,
   credentials: true,
   exposedHeaders: ["set-cookie"],
 };
+
+module.export = corsOptions;
