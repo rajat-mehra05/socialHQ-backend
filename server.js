@@ -23,6 +23,10 @@ app.use(require("./routes/authRoutes"));
 app.use(require("./routes/postRoutes"));
 app.use(require("./routes/userRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
