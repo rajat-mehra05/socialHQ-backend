@@ -10,6 +10,9 @@ connectDB();
 
 const app = express();
 
+//handling cors
+app.use(cors(corsOptions));
+
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
@@ -19,9 +22,6 @@ app.use(express.json());
 //models
 require("./models/userModel");
 require("./models/postModel");
-
-//handling cors
-app.use(cors(corsOptions));
 
 //registering routes
 app.use(require("./routes/authRoutes"));
