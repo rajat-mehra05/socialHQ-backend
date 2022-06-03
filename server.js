@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-import { corsOptions } from "./config/cors";
+const corsOptions = require("./config/cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const morgan = require("morgan");
