@@ -19,4 +19,4 @@ const corsOptions = {
   exposedHeaders: ["set-cookie"],
 };
 
-module.export = corsOptions;
+module.exports = corsOptions;
