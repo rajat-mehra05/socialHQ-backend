@@ -10,7 +10,7 @@ connectDB();
 
 const app = express();
 
-//handling cors
+// Apply CORS first, before any other middleware
 app.use(cors(corsOptions));
 
 // Handle preflight requests
@@ -33,14 +33,6 @@ app.use(require("./routes/userRoutes"));
 
 app.get("/", (req, res) => {
   res.send("hello world");
-});
-
-// Test endpoint for CORS verification
-app.get("/test-cors", (req, res) => {
-  res.json({
-    message: "CORS is working!",
-    timestamp: new Date().toISOString(),
-  });
 });
 
 const PORT = process.env.PORT || 8080;
