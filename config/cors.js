@@ -15,7 +15,7 @@ OPTIONS request.
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://social-hq.vercel.app",
+    "https://social-hq-backend.vercel.app/",
     "https://socialhq-api.up.railway.app/",
   ],
   optionsSuccessStatus: 200,
