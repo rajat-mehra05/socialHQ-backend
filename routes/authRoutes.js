@@ -49,6 +49,10 @@ router.post("/signup", (req, res) => {
 
 // sign in route
 router.post("/login", (req, res) => {
+  console.log("Login request received:", req.method, req.url);
+  console.log("Request headers:", req.headers);
+  console.log("Request body:", req.body);
+
   const { email, password } = req.body;
 
   if (!email || !password) {

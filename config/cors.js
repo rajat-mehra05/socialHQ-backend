@@ -15,12 +15,14 @@ OPTIONS request.
 const corsOptions = {
   origin: [
     "http://localhost:3000",
-    "https://social-hq-backend.vercel.app/",
-    "https://socialhq-api.up.railway.app/",
+    "https://social-hq-backend.vercel.app",
+    "https://socialhq-api.up.railway.app",
   ],
   optionsSuccessStatus: 200,
   credentials: true,
   exposedHeaders: ["set-cookie"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
 };
 
 module.exports = corsOptions;
